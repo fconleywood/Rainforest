@@ -1,0 +1,18 @@
+<h1> Welcome to Rainforest </h1>
+
+
+  <div class="link"> <%= link_to "Add Product", new_product_url %> <div>
+
+
+  <div class="index_products">
+    <% @product.each do |product| %>
+  <div class="product_name">
+      <%= product.name %> </div>
+  <br>
+  <div class="product_description">
+      <%= product.description %> </div>
+  <br>
+  <div class="product_price_in_cents">
+      <%= product.price_in_cents %> </div>
+    <% end %>
+  </div>
