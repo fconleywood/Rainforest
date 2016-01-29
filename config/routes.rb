@@ -1,23 +1,15 @@
 Rails.application.routes.draw do
   root 'products#index'
-
-  resources :products
+  #
+  # resources :products
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
-  # get 'users/new'
-  #
-  # get 'users/create'
+  resources :products do
+    resources :reviews, only: [:show, :create, :destroy]
+  end
 
-  #
-  # get 'products/index'
-  #
-  # get 'products/show'
-  #
-  # get 'products/new'
-  #
-  # get 'products/edit'
-  #
+
 
   # get '/products' => 'products#index'
   # get '/products/new' => 'products#new'
