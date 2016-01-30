@@ -1,6 +1,7 @@
 
 <h1>Sign Up</h1>
 
+
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -12,6 +13,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+     <%= f.label :name %><br/>
+     <%= f.text_field :name %>
+   </div>
   <div class="field">
     <%= f.label :email %><br/>
     <%= f.text_field :email %>
